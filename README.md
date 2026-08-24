@@ -63,12 +63,11 @@ Both datasets are pulled from Kaggle at runtime and are **not** stored in this r
 
 | Dataset | Role | Classes | Size | Source |
 |---|---|---|---|---|
-| Chest CT-Scan Images | Primary — train/validation/test | Adenocarcinoma, Large Cell Carcinoma, Squamous Cell Carcinoma, Normal | 1,000 images (613 / 72 / 315 split) | [Kaggle: mohamedhanyyy/chest-ctscan-images](https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images) |
-| IQ-OTH/NCCD Lung Cancer Dataset | Secondary — cross-dataset validation only | Normal, Benign, Malignant | 1,097 images | [Kaggle: hamdallak/the-iqothnccd-lung-cancer-dataset](https://www.kaggle.com/datasets/hamdallak/the-iqothnccd-lung-cancer-dataset) |
+| Chest CT-Scan Images | Primary - train/validation/test | Adenocarcinoma, Large Cell Carcinoma, Squamous Cell Carcinoma, Normal | 1,000 images (613 / 72 / 315 split) | [Kaggle: mohamedhanyyy/chest-ctscan-images](https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images) |
+| IQ-OTH/NCCD Lung Cancer Dataset | Secondary - cross-dataset validation only | Normal, Benign, Malignant | 1,097 images | [Kaggle: hamdallak/the-iqothnccd-lung-cancer-dataset](https://www.kaggle.com/datasets/hamdallak/the-iqothnccd-lung-cancer-dataset) |
 
-**Note:** there are multiple re-uploads of the IQ-OTH/NCCD dataset on Kaggle under different slugs — verify the slug above matches the version you intend to use before running.
 
-You will need a Kaggle API token (`kaggle.json`) — see the [Kaggle API docs](https://www.kaggle.com/docs/api). The notebook prompts for this on first run.
+You will need a Kaggle API token (`kaggle.json`), see the [Kaggle API docs](https://www.kaggle.com/docs/api). The notebook prompts for this on first run.
 
 ---
 
@@ -93,7 +92,7 @@ The ensemble's gain over DenseNet-121 alone (+1.91pp) is **not statistically sig
 | DenseNet-121, zero-shot (no fine-tune) | 38.92% | 0.3076 | 0.3334 | 0.2226 |
 | SMOTE + DenseNet-121, fine-tuned | 84.80% | 0.8212 | 0.7348 | 0.7620 |
 
-*The dataset's majority-class baseline is 51.14% — zero-shot ensemble performance is statistically indistinguishable from naive majority-class guessing, and zero-shot DenseNet-121 performs below it.*
+*The dataset's majority-class baseline is 51.14%, zero-shot ensemble performance is statistically indistinguishable from naive majority-class guessing, and zero-shot DenseNet-121 performs below it.*
 
 ### MC Dropout triage (VGG-16, T=50, 90th-percentile threshold)
 
@@ -130,7 +129,7 @@ Install the packages not pre-installed in Colab:
 pip install -q imbalanced-learn kaggle statsmodels
 ```
 
-To run outside Colab: set `USE_DRIVE = False` in the setup cell to use a local working directory instead of a mounted Drive path, and ensure a CUDA-capable GPU is available — training five architectures plus MC Dropout's 50x inference cost is not practical on CPU alone.
+To run outside Colab: set `USE_DRIVE = False` in the setup cell to use a local working directory instead of a mounted Drive path, and ensure a CUDA-capable GPU is available training five architectures plus MC Dropout's 50x inference cost is not practical on CPU alone.
 
 ---
 
@@ -147,7 +146,7 @@ To run outside Colab: set `USE_DRIVE = False` in the setup cell to use a local w
 | Limitation | Detail |
 |---|---|
 | Case-grouping fallback | `extract_case_id()` cannot parse IQ-OTH/NCCD's filename convention and falls back to one group per image — the fine-tuning adaptation/test split is image-level, not confirmed patient-level |
-| SMOTE on raw pixels | Interpolation happens on flattened pixel vectors, not a learned feature embedding — a defensible but weaker baseline |
+| SMOTE on raw pixels | Interpolation happens on flattened pixel vectors, not a learned feature embedding, a defensible but weaker baseline |
 | MC Dropout threshold calibration | The 90th-percentile review threshold is calibrated on the training set, not a held-out split |
 | Retrospective evaluation only | All results are on public benchmark datasets with fixed labels; no prospective clinical validation |
 

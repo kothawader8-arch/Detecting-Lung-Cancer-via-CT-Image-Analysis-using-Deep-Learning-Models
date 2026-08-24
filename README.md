@@ -73,11 +73,11 @@ Both datasets are pulled from Kaggle at runtime and are **not** stored in this r
 
 | Dataset | Role | Classes | Size | Source |
 |---|---|---|---|---|
-| Chest CT-Scan Images | Primary — train/validation/test | Adenocarcinoma, Large Cell Carcinoma, Squamous Cell Carcinoma, Normal | 1,000 images (613 / 72 / 315 split) | [Kaggle: mohamedhanyyy/chest-ctscan-images](https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images) |
-| IQ-OTH/NCCD Lung Cancer Dataset | Secondary — cross-dataset validation only | Normal, Benign, Malignant | 1,097 images | [Kaggle: hamdallak/the-iqothnccd-lung-cancer-dataset](https://www.kaggle.com/datasets/hamdallak/the-iqothnccd-lung-cancer-dataset) |
+| Chest CT-Scan Images | Primary : train/validation/test | Adenocarcinoma, Large Cell Carcinoma, Squamous Cell Carcinoma, Normal | 1,000 images (613 / 72 / 315 split) | [Kaggle: mohamedhanyyy/chest-ctscan-images](https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images) |
+| IQ-OTH/NCCD Lung Cancer Dataset | Secondary : cross-dataset validation only | Normal, Benign, Malignant | 1,097 images | [Kaggle: hamdallak/the-iqothnccd-lung-cancer-dataset](https://www.kaggle.com/datasets/hamdallak/the-iqothnccd-lung-cancer-dataset) |
 
 
-You will need a Kaggle API token (`kaggle.json`) — see the [Kaggle API docs](https://www.kaggle.com/docs/api). The notebook prompts for this on first run.
+You will need a Kaggle API token (`kaggle.json`) see the [Kaggle API docs](https://www.kaggle.com/docs/api). The notebook prompts for this on first run.
 
 ---
 
@@ -128,7 +128,7 @@ At the calibrated review threshold: **165/315 (52.4%)** of test cases flagged fo
 | Ardila et al. (2019) | NLST, binary | — | 0.944 | No | No |
 | **This study — Ensemble** | Chest CT, 4-class + cross-dataset | **86.7%** | **0.9859** | **Yes** | **Yes** |
 
-*This comparison table is generated directly within the notebook and notes that the two published IQ-OTH/NCCD studies have no confirmed patient-level split, a leakage risk this dissertation discusses in Chapter 2.*
+This comparison table is generated directly within the notebook and notes that the two published IQ-OTH/NCCD studies have no confirmed patient-level split, a leakage risk this dissertation discusses in Chapter 2.
 
 ---
 
@@ -154,7 +154,7 @@ Install the packages not pre-installed in Colab:
 pip install -q imbalanced-learn kaggle statsmodels
 ```
 
-To run outside Colab: set `USE_DRIVE = False` in the Section 1 setup cell to use a local working directory instead of a mounted Drive path, and ensure a CUDA-capable GPU is available — training five architectures plus MC Dropout's 50x inference cost is not practical on CPU alone.
+To run outside Colab: set `USE_DRIVE = False` in the Section 1 setup cell to use a local working directory instead of a mounted Drive path, and ensure a CUDA-capable GPU is available, training five architectures plus MC Dropout's 50x inference cost is not practical on CPU alone.
 
 ---
 
@@ -171,7 +171,7 @@ To run outside Colab: set `USE_DRIVE = False` in the Section 1 setup cell to use
 | Limitation | Detail |
 |---|---|
 | Case-grouping fallback | The patient/case-grouping step for the IQ-OTH/NCCD adaptation/test split cannot parse this dataset's filename convention and falls back to one group per image — the fine-tuning split (Section 5.2 above) is image-level, not confirmed patient-level |
-| SMOTE on raw pixels | Interpolation happens on flattened pixel vectors (~150k dimensions), not a learned feature embedding — acknowledged directly in the notebook's own Section 5 markdown as "a defensible baseline, not a strong one" |
+| SMOTE on raw pixels | Interpolation happens on flattened pixel vectors (~150k dimensions), not a learned feature embedding acknowledged directly in the notebook's own Section 5 markdown as "a defensible baseline, not a strong one" |
 | MC Dropout threshold calibration | The 90th-percentile review threshold is calibrated on the training set, not a held-out validation split |
 | Retrospective evaluation only | All results are on public benchmark datasets with fixed labels; no prospective clinical validation |
 
@@ -181,7 +181,7 @@ Full discussion of each limitation is in the accompanying dissertation (Chapters
 
 ## 9. Citation
 
-Kothawade, R. (2026) *Detecting Lung Cancer via CT Image Analysis using Deep Learning Models*. MSc Dissertation, University of Leeds.
+Kothawade, R. (2026) Detecting Lung Cancer via CT Image Analysis using Deep Learning Models. MSc Dissertation, University of Leeds.
 
 ## License
 

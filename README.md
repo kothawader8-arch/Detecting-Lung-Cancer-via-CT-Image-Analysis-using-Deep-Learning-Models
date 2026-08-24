@@ -63,7 +63,7 @@ Grad-CAM (`class GradCAM`, code cell 62) and Monte Carlo Dropout (`enable_mc_dro
 | DenseNet-121 | 6,957,956 | ImageNet | Two-phase: head only (5 ep) → full unfreeze (low LR) | 224×224 |
 | EfficientNet-B3 | 10,702,380 | ImageNet | Single-phase, label-smoothing loss | 300×300 |
 
-Every model's optimiser, learning rate, scheduler, batch size, and regularisation setting is defined independently in `MODEL_REGISTRY` in the notebook — the single source of truth for all training hyperparameters.
+Every model's optimiser, learning rate, scheduler, batch size, and regularisation setting is defined independently in `MODEL_REGISTRY` in the notebook, the single source of truth for all training hyperparameters.
 
 ---
 
@@ -106,7 +106,7 @@ DenseNet-121 is confirmed in the notebook's own output as the best individual mo
 | DenseNet-121, zero-shot (full secondary set) | 38.92% | 0.3076 | 0.3334 | 0.2226 | 0.0000 |
 | SMOTE + DenseNet-121, fine-tuned (held-out N=329) | 84.80% | 0.8212 | 0.7348 | 0.7620 | 0.4444 |
 
-The dataset's majority-class baseline is 51.14% — zero-shot ensemble accuracy is statistically indistinguishable from majority-class guessing, and zero-shot DenseNet-121 falls below it. Benign recall is structurally 0.0 under zero-shot (the primary model has no Benign output class); SMOTE-based fine-tuning of the classification head alone recovers it to 0.4444, still the weakest of the three per-class recalls post-fine-tune.
+The dataset's majority-class baseline is 51.14%, zero-shot ensemble accuracy is statistically indistinguishable from majority-class guessing, and zero-shot DenseNet-121 falls below it. Benign recall is structurally 0.0 under zero-shot (the primary model has no Benign output class); SMOTE-based fine-tuning of the classification head alone recovers it to 0.4444, still the weakest of the three per-class recalls post-fine-tune.
 
 ### 5.3 MC Dropout triage (VGG-16, T=50, 90th-percentile threshold)
 
@@ -123,10 +123,10 @@ At the calibrated review threshold: **165/315 (52.4%)** of test cases flagged fo
 
 | Study | Dataset / Task | Best Accuracy | AUC | Explainable | Uncertainty-Aware |
 |---|---|---|---|---|---|
-| Al-Yasriy (2020) | IQ-OTH/NCCD, 3-class | 99.2% | — | No | No |
-| Nasser & Yusof (2022) | IQ-OTH/NCCD, 3-class | 97.5% | — | No | No |
-| Ardila et al. (2019) | NLST, binary | — | 0.944 | No | No |
-| **This study — Ensemble** | Chest CT, 4-class + cross-dataset | **86.7%** | **0.9859** | **Yes** | **Yes** |
+| Al-Yasriy (2020) | IQ-OTH/NCCD, 3-class | 99.2% | No | No | No |
+| Nasser & Yusof (2022) | IQ-OTH/NCCD, 3-class | 97.5% | No | No | No |
+| Ardila et al. (2019) | NLST, binary | No | 0.944 | No | No |
+| **This study : Ensemble** | Chest CT, 4-class + cross-dataset | **86.7%** | **0.9859** | **Yes** | **Yes** |
 
 This comparison table is generated directly within the notebook and notes that the two published IQ-OTH/NCCD studies have no confirmed patient-level split, a leakage risk this dissertation discusses in Chapter 2.
 

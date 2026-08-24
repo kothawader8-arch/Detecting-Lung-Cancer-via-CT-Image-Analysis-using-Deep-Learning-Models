@@ -92,7 +92,7 @@ The ensemble's gain over DenseNet-121 alone (+1.91pp) is **not statistically sig
 | DenseNet-121, zero-shot (no fine-tune) | 38.92% | 0.3076 | 0.3334 | 0.2226 |
 | SMOTE + DenseNet-121, fine-tuned | 84.80% | 0.8212 | 0.7348 | 0.7620 |
 
-*The dataset's majority-class baseline is 51.14%, zero-shot ensemble performance is statistically indistinguishable from naive majority-class guessing, and zero-shot DenseNet-121 performs below it.*
+The dataset's majority-class baseline is 51.14%, zero-shot ensemble performance is statistically indistinguishable from naive majority-class guessing, and zero-shot DenseNet-121 performs below it.
 
 ### MC Dropout triage (VGG-16, T=50, 90th-percentile threshold)
 
@@ -156,7 +156,7 @@ Full discussion of each limitation, and its implications for the reported result
 
 ## 9. Citation
 
-> Kothawade, R. (2026) *Lung Cancer Detection from CT Scans: A Deep Learning Framework with Explainability and Uncertainty Quantification*. MSc Dissertation, University of Leeds.
+Kothawade, R. (2026) Lung Cancer Detection from CT Scans: A Deep Learning Framework with Explainability and Uncertainty Quantification. MSc Dissertation, University of Leeds.
 
 ## License
 

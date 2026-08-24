@@ -1,7 +1,7 @@
 # Detecting-Lung-Cancer-via-CT-Image-Analysis-using-Deep-Learning-Models
 MSc Dissertation Project, Rushikesh Kothawade, University of Leeds
 
-A single, self-contained pipeline (originally developed as a Google Colab notebook, `Detecting Lung Cancer via CT Image Analysis using Deep Learning Models.ipynb`, ~2,550 lines) that trains and compares five deep learning architectures on chest CT scan classification, builds a soft-voting ensemble, applies Grad-CAM explainability and Monte Carlo Dropout uncertainty quantification, and evaluates cross-dataset generalisation on an independent, differently-sourced dataset.
+A single, self-contained pipeline (originally developed as a Google Colab notebook, `Detecting Lung Cancer via CT Image Analysis using Deep Learning Models.ipynb`) that trains and compares five deep learning architectures on chest CT scan classification, builds a soft-voting ensemble, applies Grad-CAM explainability and Monte Carlo Dropout uncertainty quantification, and evaluates cross-dataset generalisation on an independent, differently-sourced dataset.
 
 ---
 
@@ -27,7 +27,7 @@ A single, self-contained pipeline (originally developed as a Google Colab notebo
 The pipeline is organised into nine numbered sections within a single script/notebook. Line numbers refer to `.Detecting Lung Cancer via CT Image Analysis using Deep Learning Models code.py` (2,554 lines total).
 
 | # | Section  | Purpose |
-|---|---|---|---|
+|---|---|---|
 | 0 | Run identity & environment setup  | Stamps every run with a unique `RUN_ID`, mounts Google Drive, pins `RESULTS_DIR`, logs library/GPU versions |
 | 2 | Data Acquisition  | Downloads both Kaggle datasets, sanity-checks folder structure via `find_class_root()` |
 | 3 | Exploratory Data Analysis  | Mean pixel intensity, per-class entropy, PCA variance check (training split only) |

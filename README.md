@@ -24,7 +24,7 @@ A single, self-contained pipeline (originally developed as a Google Colab notebo
 
 ## 2. Code file structure
 
-The pipeline is organised into nine numbered sections within a single script/notebook. Line numbers refer to `part1_setup_data_instrumented.py` (2,554 lines total).
+The pipeline is organised into nine numbered sections within a single script/notebook. Line numbers refer to `.Detecting Lung Cancer via CT Image Analysis using Deep Learning Models code.py` (2,554 lines total).
 
 | # | Section | Lines (approx.) | Purpose |
 |---|---|---|---|
@@ -33,12 +33,12 @@ The pipeline is organised into nine numbered sections within a single script/not
 | 3 | Exploratory Data Analysis | 239–369 | Mean pixel intensity, per-class entropy, PCA variance check (training split only) |
 | 4 | Preprocessing Pipeline | 370–529 | `ImageFolder` datasets, train/eval transforms, `DataLoader`s, class-count logging |
 | 5 | SMOTE Utility | 530–756 | Defines `apply_smote_to_image_folder()` (used later in cross-dataset fine-tuning); model architecture definitions (`CustomCNN`, `build_resnet50`, etc.) and `MODEL_REGISTRY` also live in this block |
-| — | Training loop | 757–1141 | Parameter counts, per-model training with early stopping, checkpoint saving |
+| - | Training loop | 757–1141 | Parameter counts, per-model training with early stopping, checkpoint saving |
 | 6 | Per-class metrics + confusion matrices | 1142–1403 | Evaluation on held-out test set for all 5 models + ensemble |
 | 7 | All-pairs McNemar's test | 1404–1457 | Statistical significance testing across every model pair |
-| — | Grad-CAM | 1458–1729 | `GradCAM` class, per-architecture target-layer resolution, qualitative grid, entropy-spread analysis |
-| — | Monte Carlo Dropout | 1730–1916 | `enable_mc_dropout()`, `mc_dropout_predict()`, quartile analysis, triage threshold calibration |
-| — | Cross-dataset generalisation | 1917–2547 | Zero-shot evaluation, case-grouped split, SMOTE-balanced fine-tuning of DenseNet-121's head |
+| - | Grad-CAM | 1458–1729 | `GradCAM` class, per-architecture target-layer resolution, qualitative grid, entropy-spread analysis |
+| - | Monte Carlo Dropout | 1730–1916 | `enable_mc_dropout()`, `mc_dropout_predict()`, quartile analysis, triage threshold calibration |
+| - | Cross-dataset generalisation | 1917–2547 | Zero-shot evaluation, case-grouped split, SMOTE-balanced fine-tuning of DenseNet-121's head |
 | 9 | Final run manifest | 2548–2554 | Consolidates all run metadata into a single exportable summary |
 
 ---
@@ -53,7 +53,7 @@ The pipeline is organised into nine numbered sections within a single script/not
 | DenseNet-121 | 6,957,956 | ImageNet | Two-phase: head only (5 ep) → full unfreeze (low LR) | 224×224 |
 | EfficientNet-B3 | 10,702,380 | ImageNet | Single-phase, label-smoothing loss | 300×300 |
 
-Each model's optimiser, learning rate, scheduler, batch size, and regularisation settings are defined independently in `MODEL_REGISTRY` (see code) — this is the single source of truth for every hyperparameter used in training, and is reproduced in full in the dissertation's Appendix A.
+Each model's optimiser, learning rate, scheduler, batch size, and regularisation settings are defined independently in `MODEL_REGISTRY` (see code), this is the single source of truth for every hyperparameter used in training, and is reproduced in full in the dissertation's Appendix A.
 
 ---
 

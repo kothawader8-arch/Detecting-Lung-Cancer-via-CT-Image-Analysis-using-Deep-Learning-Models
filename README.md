@@ -1,4 +1,3 @@
-# Detecting-Lung-Cancer-via-CT-Image-Analysis-using-Deep-Learning-Models
 # Detecting Lung Cancer via CT Image Analysis using Deep Learning Models
 
 MSc Dissertation Project, Rushikesh Kothawade, University of Leeds

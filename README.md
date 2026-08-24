@@ -24,7 +24,7 @@ A single, self-contained pipeline (originally developed as a Google Colab notebo
 
 ## 2. Code file structure
 
-The pipeline is organised into nine numbered sections within a single script/notebook. Line numbers refer to `.Detecting Lung Cancer via CT Image Analysis using Deep Learning Models code.py` (2,554 lines total).
+The pipeline is organised into nine numbered sections within a single script/notebook. Line numbers refer to `.Detecting Lung Cancer via CT Image Analysis using Deep Learning Models code.py` .
 
 | # | Section  | Purpose |
 |---|---|---|
@@ -145,7 +145,7 @@ To run outside Colab: set `USE_DRIVE = False` in the setup cell to use a local w
 
 | Limitation | Detail |
 |---|---|
-| Case-grouping fallback | `extract_case_id()` cannot parse IQ-OTH/NCCD's filename convention and falls back to one group per image — the fine-tuning adaptation/test split is image-level, not confirmed patient-level |
+| Case-grouping fallback | `extract_case_id()` cannot parse IQ-OTH/NCCD's filename convention and falls back to one group per image, the fine-tuning adaptation/test split is image-level, not confirmed patient-level |
 | SMOTE on raw pixels | Interpolation happens on flattened pixel vectors, not a learned feature embedding, a defensible but weaker baseline |
 | MC Dropout threshold calibration | The 90th-percentile review threshold is calibrated on the training set, not a held-out split |
 | Retrospective evaluation only | All results are on public benchmark datasets with fixed labels; no prospective clinical validation |

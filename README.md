@@ -170,7 +170,7 @@ To run outside Colab: set `USE_DRIVE = False` in the Section 1 setup cell to use
 
 | Limitation | Detail |
 |---|---|
-| Case-grouping fallback | The patient/case-grouping step for the IQ-OTH/NCCD adaptation/test split cannot parse this dataset's filename convention and falls back to one group per image — the fine-tuning split (Section 5.2 above) is image-level, not confirmed patient-level |
+| Case-grouping fallback | The patient/case-grouping step for the IQ-OTH/NCCD adaptation/test split cannot parse this dataset's filename convention and falls back to one group per image the fine-tuning split (Section 5.2 above) is image-level, not confirmed patient-level |
 | SMOTE on raw pixels | Interpolation happens on flattened pixel vectors (~150k dimensions), not a learned feature embedding acknowledged directly in the notebook's own Section 5 markdown as "a defensible baseline, not a strong one" |
 | MC Dropout threshold calibration | The 90th-percentile review threshold is calibrated on the training set, not a held-out validation split |
 | Retrospective evaluation only | All results are on public benchmark datasets with fixed labels; no prospective clinical validation |

@@ -26,20 +26,20 @@ A single, self-contained pipeline (originally developed as a Google Colab notebo
 
 The pipeline is organised into nine numbered sections within a single script/notebook. Line numbers refer to `.Detecting Lung Cancer via CT Image Analysis using Deep Learning Models code.py` (2,554 lines total).
 
-| # | Section | Lines (approx.) | Purpose |
+| # | Section  | Purpose |
 |---|---|---|---|
-| 0 | Run identity & environment setup | 1–126 | Stamps every run with a unique `RUN_ID`, mounts Google Drive, pins `RESULTS_DIR`, logs library/GPU versions |
-| 2 | Data Acquisition | 127–238 | Downloads both Kaggle datasets, sanity-checks folder structure via `find_class_root()` |
-| 3 | Exploratory Data Analysis | 239–369 | Mean pixel intensity, per-class entropy, PCA variance check (training split only) |
-| 4 | Preprocessing Pipeline | 370–529 | `ImageFolder` datasets, train/eval transforms, `DataLoader`s, class-count logging |
-| 5 | SMOTE Utility | 530–756 | Defines `apply_smote_to_image_folder()` (used later in cross-dataset fine-tuning); model architecture definitions (`CustomCNN`, `build_resnet50`, etc.) and `MODEL_REGISTRY` also live in this block |
-| - | Training loop | 757–1141 | Parameter counts, per-model training with early stopping, checkpoint saving |
-| 6 | Per-class metrics + confusion matrices | 1142–1403 | Evaluation on held-out test set for all 5 models + ensemble |
-| 7 | All-pairs McNemar's test | 1404–1457 | Statistical significance testing across every model pair |
-| - | Grad-CAM | 1458–1729 | `GradCAM` class, per-architecture target-layer resolution, qualitative grid, entropy-spread analysis |
-| - | Monte Carlo Dropout | 1730–1916 | `enable_mc_dropout()`, `mc_dropout_predict()`, quartile analysis, triage threshold calibration |
-| - | Cross-dataset generalisation | 1917–2547 | Zero-shot evaluation, case-grouped split, SMOTE-balanced fine-tuning of DenseNet-121's head |
-| 9 | Final run manifest | 2548–2554 | Consolidates all run metadata into a single exportable summary |
+| 0 | Run identity & environment setup  | Stamps every run with a unique `RUN_ID`, mounts Google Drive, pins `RESULTS_DIR`, logs library/GPU versions |
+| 2 | Data Acquisition  | Downloads both Kaggle datasets, sanity-checks folder structure via `find_class_root()` |
+| 3 | Exploratory Data Analysis  | Mean pixel intensity, per-class entropy, PCA variance check (training split only) |
+| 4 | Preprocessing Pipeline  | `ImageFolder` datasets, train/eval transforms, `DataLoader`s, class-count logging |
+| 5 | SMOTE Utility  | Defines `apply_smote_to_image_folder()` (used later in cross-dataset fine-tuning); model architecture definitions (`CustomCNN`, `build_resnet50`, etc.) and `MODEL_REGISTRY` also live in this block |
+| - | Training loop  | Parameter counts, per-model training with early stopping, checkpoint saving |
+| 6 | Per-class metrics + confusion matrices  | Evaluation on held-out test set for all 5 models + ensemble |
+| 7 | All-pairs McNemar's test  | Statistical significance testing across every model pair |
+| - | Grad-CAM  | `GradCAM` class, per-architecture target-layer resolution, qualitative grid, entropy-spread analysis |
+| - | Monte Carlo Dropout  | `enable_mc_dropout()`, `mc_dropout_predict()`, quartile analysis, triage threshold calibration |
+| - | Cross-dataset generalisation  | Zero-shot evaluation, case-grouped split, SMOTE-balanced fine-tuning of DenseNet-121's head |
+| 9 | Final run manifest  | Consolidates all run metadata into a single exportable summary |
 
 ---
 

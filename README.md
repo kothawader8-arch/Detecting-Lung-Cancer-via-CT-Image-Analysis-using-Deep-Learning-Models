@@ -48,7 +48,6 @@ Section headers as they actually appear in the notebook, with their markdown cel
 | 99 | 8. Zero-shot sanity check | Class distribution + confusion matrix, cross-dataset |
 | 110 | 9. Final run manifest | Consolidated run metadata export |
 
-Grad-CAM (`class GradCAM`, code cell 62) and Monte Carlo Dropout (`enable_mc_dropout`, code cell 69) are both implemented between the Section 6 and Section 7 markdown headers (cells 56–72) but are not marked with their own top-level markdown headers in this notebook.
 
 ---
 
@@ -82,7 +81,7 @@ You will need a Kaggle API token (`kaggle.json`) see the [Kaggle API docs](https
 
 ## 5. Results
 
-All figures below are taken directly from this notebook's saved execution output (run ID `20260816_115645`).
+All figures below are taken directly from this notebook's saved execution output (run ID `20260826_214410`).
 
 ### 5.1 Individual models + ensemble (primary test set, n=315)
 

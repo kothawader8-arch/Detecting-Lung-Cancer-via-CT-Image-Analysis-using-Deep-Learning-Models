@@ -122,10 +122,10 @@ At the calibrated review threshold: **165/315 (52.4%)** of test cases flagged fo
 
 | Study | Dataset / Task | Best Accuracy | AUC | Explainable | Uncertainty-Aware |
 |---|---|---|---|---|---|
-| Al-Yasriy (2020) | IQ-OTH/NCCD, 3-class | 99.2% | No | No | No |
-| Al-Huseiny & Sajit (2021) | IQ-OTH/NCCD, 3-class | 94.4% | No | No | No |
+| Hamdalla F.Al-Yasriy (2020) | IQ-OTH/NCCD, 3-class | 93.54% | No | No | No |
+| Al-Huseiny & Sajit (2021) | IQ-OTH/NCCD, 3-class | 94.38% | No | No | No |
 | Ardila et al. (2019) | NLST, binary | No | 0.944 | No | No |
-| **This study : Ensemble** | Chest CT, 4-class + cross-dataset | **86.7%** | **0.9859** | **Yes** | **Yes** |
+| **This study : Ensemble** | Chest CT, 4-class + cross-dataset | **86.67%** | **0.9859** | **Yes** | **Yes** |
 
 This comparison table is generated directly within the notebook and notes that the two published IQ-OTH/NCCD studies have no confirmed patient-level split, a leakage risk this dissertation discusses in Chapter 2.
 

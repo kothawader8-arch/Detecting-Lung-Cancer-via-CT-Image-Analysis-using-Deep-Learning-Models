@@ -1,0 +1,49 @@
+Academic and Research Use License
+
+Copyright (c) 2026 Rushikesh Kothawade
+
+This repository contains source code developed as part of an MSc dissertation
+project ("Detecting Lung Cancer via CT Image Analysis using Deep Learning
+Models") submitted to the University of Leeds.
+
+Permission is granted to view, download, and use this code free of charge,
+subject to the following conditions:
+
+1. Permitted use
+   The code may be used, copied, and modified for academic, educational, and
+   non-commercial research purposes only. This includes use in coursework,
+   dissertations, theses, academic papers, and personal learning.
+
+2. Attribution
+   Any use, reproduction, or adaptation of this code, in whole or in part,
+   must include clear attribution to the original author (Rushikesh
+   Kothawade) and a reference to the source repository.
+
+3. Commercial use
+   Commercial use, redistribution as part of a commercial product or
+   service, or use in a for-profit context is not permitted without prior
+   written permission from the author.
+
+4. No warranty
+   This code is provided "as is", without warranty of any kind, express or
+   implied, including but not limited to warranties of merchantability,
+   fitness for a particular purpose, or non-infringement. The author makes
+   no representation that the code is free of errors or suitable for any
+   particular purpose, including clinical or diagnostic use. In no event
+   shall the author be liable for any claim, damages, or other liability
+   arising from the use of this code.
+
+5. Not for clinical use
+   This project is a research proof-of-concept only. It has not been
+   validated for, and must not be used for, real-world clinical diagnosis,
+   treatment decisions, or any other medical application.
+
+6. Third-party datasets
+   This repository does not redistribute the datasets used in this project.
+   The Chest CT-Scan Images dataset and the IQ-OTH/NCCD Lung Cancer Dataset
+   are subject to their own respective licenses on Kaggle; users must
+   obtain and use these datasets in accordance with their original terms
+   (see the README for source links).
+
+For permissions beyond the scope of this license, please contact the
+author directly.

@@ -181,7 +181,7 @@ Full discussion of each limitation is in the accompanying dissertation (Chapters
 
 Kothawade, R. (2026) Detecting Lung Cancer via CT Image Analysis using Deep Learning Models. MSc Dissertation, University of Leeds.
 
-## License
+## Licence
 
 Code is made available for academic and research purposes. Dataset licenses are governed by their respective Kaggle sources (Section 4).
 

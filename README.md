@@ -67,7 +67,7 @@ Every model's optimiser, learning rate, scheduler, batch size, and regularisatio
 
 ## 4. Datasets
 
-Both datasets are pulled from Kaggle at runtime and are **not** stored in this repository.
+Both datasets are pulled from Kaggle at runtime and are not stored in this repository.
 
 | Dataset | Role | Classes | Size | Source |
 |---|---|---|---|---|
@@ -75,7 +75,7 @@ Both datasets are pulled from Kaggle at runtime and are **not** stored in this r
 | IQ-OTH/NCCD Lung Cancer Dataset | Secondary : cross-dataset validation only | Normal, Benign, Malignant | 1,097 images | [Kaggle: hamdallak/the-iqothnccd-lung-cancer-dataset](https://www.kaggle.com/datasets/hamdallak/the-iqothnccd-lung-cancer-dataset) |
 
 
-You will need a Kaggle API token (`kaggle.json`) see the [Kaggle API docs](https://www.kaggle.com/docs/api). The notebook prompts for this on first run.
+You will need a Kaggle API token (kaggle.json) see the [Kaggle API docs](https://www.kaggle.com/docs/api). The notebook prompts for this on first run.
 
 ---
 
@@ -94,7 +94,7 @@ All figures below are taken directly from this notebook's saved execution output
 | **DenseNet-121** | **84.76%** | 0.8680 | 0.8550 | **0.8597** | 0.9619 |
 | **Ensemble** (VGG-16 + DenseNet-121 + ResNet-50) | **86.67%** | 0.8985 | 0.9033 | **0.8897** | **0.9859** |
 
-DenseNet-121 is confirmed in the notebook's own output as the best individual model by test accuracy. The ensemble's +1.91pp gain over DenseNet-121 is **not statistically significant** under McNemar's test (χ²=0.4808, p=0.4881).
+DenseNet-121 is confirmed in the notebook's own output as the best individual model by test accuracy. The ensemble's +1.91pp gain over DenseNet-121 is not statistically significant under McNemar's test (χ²=0.4808, p=0.4881).
 
 ### 5.2 Cross-dataset generalisation (IQ-OTH/NCCD)
 
@@ -115,7 +115,7 @@ The dataset's majority-class baseline is 51.14%, zero-shot ensemble accuracy is 
 | Q3 | [0.276, 0.688) | 25.08% | 74.68% | 79 |
 | Q4 (High) | [0.688, 1.345] | 25.08% | 49.37% | 79 |
 
-At the calibrated review threshold: **165/315 (52.4%)** of test cases flagged for review, error rate within flagged subset 36.4%, catching **60 of 63 total model errors (95.2%)**. Extrapolated to 1,000 scans: 476 auto-classified, 524 flagged (191 genuine errors caught, 333 correct-but-flagged).
+At the calibrated review threshold: 165/315 (52.4%) of test cases flagged for review, error rate within flagged subset 36.4%, catching 60 of 63 total model errors (95.2%). Extrapolated to 1,000 scans: 476 auto-classified, 524 flagged (191 genuine errors caught, 333 correct-but-flagged).
 
 ### 5.4 Comparison with published benchmarks
 
@@ -132,7 +132,7 @@ This comparison table is generated directly within the notebook and notes that t
 
 ## 6. Environment & requirements
 
-Developed and executed on **Google Colab**, using a **Tesla T4 GPU** runtime with Google Drive mounted for persistent storage across sessions.
+Developed and executed on Google Colab, using a Tesla T4 GPU runtime with Google Drive mounted for persistent storage across sessions.
 
 | Package | Version confirmed in notebook output |
 |---|---|

@@ -158,7 +158,7 @@ To run outside Colab: set `USE_DRIVE = False` in the Section 1 setup cell to use
 
 ## 7. Reproducibility
 
-- Cell 0 stamps every run with a unique `RUN_ID` (timestamp-based); all figures, tables, checkpoints, and JSON summaries for that run are written under `results/<RUN_ID>/`, so different executions never overwrite one another. The results reported above are from run `20260816_115645`.
+- Cell 0 stamps every run with a unique `RUN_ID` (timestamp-based); all figures, tables, checkpoints, and JSON summaries for that run are written under `results/<RUN_ID>/`, so different executions never overwrite one another. The results reported above are from run `20260826_214410`.
 - A `manifest` dictionary (finalised in the Section 9 cell) accumulates library versions, GPU info, dataset class counts, per-model parameter counts, and convergence stats throughout the run.
 - Random seed fixed at `SEED = 42` across Python's `random`, NumPy, and PyTorch (including CUDA), with `torch.backends.cudnn.deterministic = True`. Exact bit-for-bit reproducibility across different GPU types is not guaranteed.
 
